@@ -64,7 +64,7 @@ function groupByMain(list) {
             <div class="border border-[#EEEEEE] border[1px]" />
 
             <div class="flex justify-center px-2 pb-3">
-                <Button text="Deslogar da Conta" icon="/img/icons/icon-right-arrow.svg"/>
+                <Button text="Deslogar da Conta" iconRight="/img/icons/icon-right-arrow.svg" />
             </div>
         </nav>
     </aside>
