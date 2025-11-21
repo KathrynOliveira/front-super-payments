@@ -4,13 +4,17 @@ defineProps({
         type: String,
         required: true,
     },
-    icon: {
+    iconLeft: {
+        type: String,
+        default: null,
+    },
+    iconRight: {
         type: String,
         default: null,
     },
     width: {
         type: String,
-        default: "251px",
+        default: "auto",
     },
     height: {
         type: String,
@@ -24,22 +28,25 @@ defineProps({
         type: String,
         default: "#D9D9D9",
     },
+    color: {
+        type: String,
+        default: "#2A2E33",
+    },
 });
 </script>
 
 <template>
-    <button class="flex items-center justify-center rounded-[250px] gap-[63px] border cursor-pointer" :style="{
-        width,
-        height,
-        background,
-        borderColor,
-    }">
+    <button class="flex items-center rounded-[250px] gap-2 px-4 border cursor-pointer"
+        :style="{ width, height, background, borderColor }">
+        <!-- Ícone esquerdo -->
+        <img v-if="iconLeft" :src="iconLeft" class="w-[18px] h-[18px]" />
 
         <!-- Texto -->
-        <span class="font-semibold text-[14px] leading-none text-[#2A2E33]">
+        <span class="font-semibold text-[14px] leading-none" :style="{ color }">
             {{ text }}
         </span>
-        <!-- Ícone -->
-        <img v-if="icon" :src="icon" alt="icon" class="w-5 h-5" />
+
+        <!-- Ícone direito -->
+        <img v-if="iconRight" :src="iconRight" class="w-[18px] h-[18px]" />
     </button>
 </template>
